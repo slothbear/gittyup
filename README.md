@@ -10,16 +10,7 @@ commit message. The wrapper contains no error handling,
 so the user will receive errors from git.
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'adcopu'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+If you have a Gemfile, add adcopu. Otherwise, install it like this:
 
     $ gem install adcopu
 
