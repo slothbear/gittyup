@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
                          commit message. The wrapper contains no error handling,
                          so the user will receive errors from git.
                          }
-  gem.summary       = %q{wrapper for: git add/commit/push to Heroku}
+  gem.summary       = %q{wrapper for git add/commit/push to Heroku}
   gem.homepage      = "http://github.com/slothbear/adcopu"
 
   gem.files         = `git ls-files`.split($/)
