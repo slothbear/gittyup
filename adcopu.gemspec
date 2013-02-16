@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.name          = "adcopu"
   gem.version       = Adcopu::VERSION
   gem.authors       = ["Paul Morganthall"]
-  gem.email         = ["paul@morganthall.com"]
+  gem.email         = ["pcm@morganthall.com"]
   gem.description   = %q{New users to git and Heroku sometimes have trouble
                          with the syntax of the git commands required to deploy
                          an application to Heroku. This wrapper combines
