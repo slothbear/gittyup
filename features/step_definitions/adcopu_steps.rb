@@ -1,3 +1,9 @@
+Given /^there is a heroku remote "(.*?)"$/ do |name|
+  steps %Q{
+    Given I successfully run `git remote add heroku git@heroku.com:#{name}.git`
+  }
+end
+
 Given /^an initialized git repository$/ do
   steps %Q{
     Given a blank directory
