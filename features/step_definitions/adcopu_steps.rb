@@ -13,8 +13,8 @@ end
 
 Given /^a blank directory$/ do
   steps %Q{
-    Given a directory named "adcopu_test"
-    And I cd to "adcopu_test"
+    Given a directory named "repository"
+    And I cd to "repository"
   }
 end
 
