@@ -19,7 +19,7 @@ If you have a Gemfile, add adcopu. Otherwise, install it like this:
 Typical usage:
 
     $ adcopu
-    enter commit message> Added all the things
+    enter commit message (blank to exit)> Added all the things
     [master 318bd11] Added all the things
      1 files changed, 2 insertions(+), 0 deletions(-)
     ... wait for push to start, then ...
