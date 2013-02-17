@@ -1,5 +1,9 @@
 Given /^an initialized git repository$/ do
-  pending
+  steps %Q{
+    Given a blank directory
+    And I successfully run `git init`
+  }
+end
 
 Given /^a blank directory$/ do
   steps %Q{

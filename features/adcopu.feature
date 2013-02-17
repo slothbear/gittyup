@@ -9,3 +9,9 @@ Scenario: The git repository does not exist
   Then the exit status should not be 0
   And the stderr should contain "Not a git repository"
 
+Scenario: No files changed (nothing to commit)
+  Given an initialized git repository
+  When I run `adcopu`
+  Then the exit status should not be 0
+  And the stdout should contain "No files have been changed"
+

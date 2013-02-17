@@ -5,3 +5,7 @@
 status = %x[git status --porcelain]
 exit $?.exitstatus unless $?.success?
 
+if status.empty?
+  puts '** No files have been changed, created, or removed.'
+  exit 1
+end
