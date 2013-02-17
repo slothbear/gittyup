@@ -31,6 +31,9 @@ Typical usage:
        13f987c..aceaf78  master -> master
     $
 
+## Tests
+You can find the nicely formatted test suite at
+[Relish](http://relishapp.com/slothbear/adcopu).
 
 ## Contributing
 
