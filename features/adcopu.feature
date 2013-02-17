@@ -36,9 +36,9 @@ Scenario: Cannot commit without commit message
   Then the stderr should contain "empty commit message"
   And the exit status should not be 0
 
-Scenario: Cannot push without a remote called 'heroku'
+Scenario: Cannot push without a remote named 'heroku'
   Given a git repository with indexed changes
-  But there is no remote called 'heroku'
+  But there is no remote named heroku
   When I run `adcopu` interactively
   And I type "railsbridge workshop changes"
   Then the exit status should not be 0
