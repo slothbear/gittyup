@@ -1,16 +1,16 @@
 # adcopu
 
-New users to git and Heroku sometimes have trouble
+New users to **git** and **Heroku** sometimes have trouble
 with the syntax and arguments of the git commands required
 to deploy an application to Heroku. This wrapper combines
-the git add, commit, and push commands.
+the git *add*, *commit*, and *push* commands.
 
 The command has no arguments. The user is prompted for a
 commit message. The wrapper contains no error handling,
-so the user will receive errors from git.
+so the user will receive standard errors from git.
 
 ## installation
-If you have a Gemfile, add adcopu. Otherwise, install it like this:
+If you have a Gemfile, add **adcopu**. Otherwise, install it like this:
 
     $ gem install adcopu
 
@@ -35,12 +35,12 @@ typical usage:
 
 ## detailed operation
 All code is in [bin/adcopu](https://github.com/slothbear/adcopu/blob/master/bin/adcopu).
-An error from any system command causes adcopu to exit.
+An error from any system command causes the script to exit.
 
-Since adcopu is designed for beginning users, it assumes you
-are committing to and pushing the 'master' branch.
-If you know enough to have other
-branches, you probably don't need adcopu.
+Since the script is designed for beginning users, it assumes
+you are committing to and pushing the **master** branch.
+If you know enough to have multiple
+branches, you probably don't need this script.
 
 The script performs these steps:
 
@@ -54,10 +54,10 @@ are no changed files to commit.
 1. `git push heroku master` Deploy the updated repository to Heroku.
 
 For every system command performed, the exit status of the
-operation is passed back via `exit $?.exitstatus`.
+operation is passed back via `exit $?.exitstatus`. The status
 
 ## tests
-The nicely formatted test suite is available at
+A nicely formatted test suite is available at
 [Relish](http://relishapp.com/slothbear/adcopu).
 
 ## contributing
