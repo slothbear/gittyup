@@ -1,41 +1,66 @@
 # adcopu
 
 New users to git and Heroku sometimes have trouble
-with the syntax of the git commands required to deploy
-an application to Heroku. This wrapper combines
-the git add, commit, and push commands needed.
+with the syntax and arguments of the git commands required
+to deploy an application to Heroku. This wrapper combines
+the git add, commit, and push commands.
 
 The command has no arguments. The user is prompted for a
 commit message. The wrapper contains no error handling,
 so the user will receive errors from git.
 
-## Installation
+## installation
 If you have a Gemfile, add adcopu. Otherwise, install it like this:
 
     $ gem install adcopu
 
-## Usage
+## usage
 
-Typical usage:
+typical usage:
 
     $ adcopu
-    enter commit message (blank to exit)> Added all the things
-    [master 318bd11] Added all the things
+    enter commit message (blank to exit)> New site title
+    [master 318bd11] New site title
      1 files changed, 2 insertions(+), 0 deletions(-)
-    ... wait for push to start, then ...
-    ... lots of messages from Heroku ...
-    Counting objects: 8, done.
-    Delta compression using up to 2 threads.
-    ... and more until it ends like this ...
+
+*wait for push to start, then*
+
+*lots of messages from Heroku*
+
+*until the push ends like this*
+
     To git@heroku.com:awesomeproject.git
        13f987c..aceaf78  master -> master
     $
 
-## Tests
-You can find the nicely formatted test suite at
+## detailed operation
+All code is in [bin/adcopu](https://github.com/slothbear/adcopu/blob/master/bin/adcopu).
+An error from any system command causes adcopu to exit.
+
+Since adcopu is designed for beginning users, it assumes you
+are committing to and pushing the 'master' branch.
+If you know enough to have other
+branches, you probably don't need adcopu.
+
+The script performs these steps:
+
+1. `git status` If this command fails, the current directory is
+probably not a git repository.
+1. `git status` If this command provides no output, then there
+are no changed files to commit.
+1. `git add --all` Add new, changed, and removed files to the index.
+1. Prompt the user for a commit message. If no message is entered, the script exits.
+1. `git commit --message <message>` Record changes to the repository.
+1. `git push heroku master` Deploy the updated repository to Heroku.
+
+For every system command performed, the exit status of the
+operation is passed back via `exit $?.exitstatus`.
+
+## tests
+The nicely formatted test suite is available at
 [Relish](http://relishapp.com/slothbear/adcopu).
 
-## Contributing
+## contributing
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
