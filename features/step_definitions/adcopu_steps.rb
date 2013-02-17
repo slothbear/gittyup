@@ -17,6 +17,18 @@ Given /^a git repository with pending changes$/ do
     Given an initialized git repository
     And an empty file named "railsbridge-boston.rb"
   }
+end
 
+Given /^a git repository with indexed changes$/ do
+  steps %Q{
+    Given a git repository with pending changes
+    And I successfully run `git add --all`
+  }
+end
+
+Given /^there is no remote called 'heroku'$/ do
+  steps %Q{
+    Given I run `git remote rm heroku`
+  }
 end
 

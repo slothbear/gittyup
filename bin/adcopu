@@ -16,3 +16,6 @@ exit $?.exitstatus unless system('git add --all')
 message = Readline.readline('enter commit message (blank to exit)> ')
 exit $?.exitstatus unless system('git', 'commit', '--message', message)
 
+system 'git push heroku'
+exit $?.exitstatus
+
