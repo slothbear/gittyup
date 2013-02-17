@@ -1,7 +1,9 @@
-Given /^there is a heroku remote "(.*?)"$/ do |name|
+Given /^there is a git remote named heroku$/ do
   steps %Q{
-    Given I successfully run `git remote add heroku git@heroku.com:#{name}.git`
+    Given I successfully run `git remote add heroku git@heroku.com:adcopu_test_app.git`
   }
+  # Only the step that uses the heroku remote needs more time.
+  @aruba_timeout_seconds = 15
 end
 
 Given /^an initialized git repository$/ do

@@ -3,15 +3,15 @@ Feature: Combine git add, commit, and push into one command
   I want to deploy my changes to Heroku with one command
   So that everyone in the world can see them
 
-Scenario: Successfully add, commit, and push
+Scenario: Successfully add, commit, and (fake) push
   Given a git repository with pending changes
-  And there is a heroku remote "xxx-02472-rbboston"
-  And The default aruba timeout is 30 seconds
+  And there is a git remote named heroku
   When I run `adcopu` interactively
-  And I type "add more golden retriever puppies"
-  # This is not a successful push, but it does talk to the server.
-  Then the exit status should be 0
-  And the stderr should contain "No such app as xxx-02472-rbboston"
+  And I type "more golden retriever puppies"
+  # This is not a successful push, but it does talk to Heroku.
+  # TODO: the push requires prior Heroku auth setup.
+  Then the stderr should contain "No such app"
+  And the exit status should not be 0
 
 Scenario: The git repository does not exist
   Given a blank directory
