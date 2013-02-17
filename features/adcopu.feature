@@ -10,20 +10,20 @@ Scenario: Successfully add, commit, and (fake) push
   And I type "more golden retriever puppies"
   # This is not a successful push, but it does talk to Heroku.
   # TODO: the push requires prior Heroku auth setup.
-  Then the stderr should contain "No such app"
+  Then the output should contain "No such app"
   And the exit status should not be 0
 
 Scenario: The git repository does not exist
   Given a blank directory
   When I run `adcopu`
   Then the exit status should not be 0
-  And the stderr should contain "Not a git repository"
+  And the output should contain "Not a git repository"
 
 Scenario: No files changed (nothing to commit)
   Given an initialized git repository
   When I run `adcopu`
   Then the exit status should not be 0
-  And the stdout should contain "No files have been changed"
+  And the output should contain "No files have been changed"
 
 Scenario: Errors from git add
   # The exit code from git add could be non-zero if there were
@@ -33,7 +33,7 @@ Scenario: Cannot commit without commit message
   Given a git repository with pending changes
   When I run `adcopu` interactively
   And I type ""
-  Then the stderr should contain "empty commit message"
+  Then the output should contain "empty commit message"
   And the exit status should not be 0
 
 Scenario: Cannot push without a remote named 'heroku'
@@ -42,5 +42,5 @@ Scenario: Cannot push without a remote named 'heroku'
   When I run `adcopu` interactively
   And I type "railsbridge workshop changes"
   Then the exit status should not be 0
-  And the stderr should contain "'heroku' does not appear"
+  And the output should contain "'heroku' does not appear"
 
