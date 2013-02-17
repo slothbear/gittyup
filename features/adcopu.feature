@@ -15,3 +15,7 @@ Scenario: No files changed (nothing to commit)
   Then the exit status should not be 0
   And the stdout should contain "No files have been changed"
 
+Scenario: Errors from git add
+  # The exit code from git add could be non-zero if there were
+  # errors adding files to the index. How to test?
+
