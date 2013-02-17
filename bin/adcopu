@@ -9,3 +9,6 @@ if status.empty?
   puts '** No files have been changed, created, or removed.'
   exit 1
 end
+
+exit $?.exitstatus unless system('git add --all')
+
