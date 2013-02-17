@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+# Perform git add, commit, and push to Heroku.
+
+status = %x[git status --porcelain]
+exit unless $?.success?
+
