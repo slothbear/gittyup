@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require 'readline'
 
 # Perform git add, commit, and push to Heroku.
 
@@ -11,4 +12,7 @@ if status.empty?
 end
 
 exit $?.exitstatus unless system('git add --all')
+
+message = Readline.readline('enter commit message (blank to exit)> ')
+exit $?.exitstatus unless system('git', 'commit', '--message', message)
 

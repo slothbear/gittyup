@@ -19,3 +19,12 @@ Scenario: Errors from git add
   # The exit code from git add could be non-zero if there were
   # errors adding files to the index. How to test?
 
+Scenario: Cannot commit without commit message
+  Given a git repository with pending changes
+  When I run `adcopu` interactively
+  And I type ""
+  # With the following line commented, exit status == 0
+  # With this line executing, exit status == 1)
+  # Why does checking stderr make the exit status right? BUG?
+  #Then the stderr should contain "empty commit message"
+  And the exit status should not be 0

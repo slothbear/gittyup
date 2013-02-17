@@ -12,3 +12,11 @@ Given /^a blank directory$/ do
   }
 end
 
+Given /^a git repository with pending changes$/ do
+  steps %Q{
+    Given an initialized git repository
+    And an empty file named "railsbridge-boston.rb"
+  }
+
+end
+
