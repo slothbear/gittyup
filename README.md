@@ -60,6 +60,13 @@ operation is passed back via `exit $?.exitstatus`. The status
 A nicely formatted test suite is available at
 [Relish](http://relishapp.com/slothbear/adcopu).
 
+To run the tests:
+```
+    $ cd adcopu
+    $ bundle
+    $ rake
+```
+
 ## contributing
 
 1. Fork it
