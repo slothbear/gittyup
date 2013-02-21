@@ -18,8 +18,9 @@ puts "Staging files for commit with: #{git_add_command}"
 exit $?.exitstatus unless system(git_add_command)
 
 message = Readline.readline('enter commit message (blank to exit)> ')
-git_commit_command = "git commit --message '#{message}'"
-exit $?.exitstatus unless system(git_commit_command)
+git_commit_command_args = ['git', 'commit', '--message', message]
+puts "Commiting files with: #{git_commit_command_args.join(' ')}"
+exit $?.exitstatus unless system(*git_commit_command_args)
 
 git_push_command = 'git push heroku master'
 puts "Pushing to heroku with: #{git_push_command}"
