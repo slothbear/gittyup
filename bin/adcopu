@@ -3,7 +3,9 @@ require 'readline'
 
 # Perform git add, commit, and push to Heroku.
 
-status = %x[git status --porcelain]
+status_command = 'git status --porcelain'
+puts "Checking git status with: #{status_command}"
+status = %x[#{status_command}]
 exit $?.exitstatus unless $?.success?
 
 if status.empty?
@@ -11,11 +13,17 @@ if status.empty?
   exit 1
 end
 
-exit $?.exitstatus unless system('git add --all')
+git_add_command = 'git add --all'
+puts "Staging files for commit with: #{git_add_command}"
+exit $?.exitstatus unless system(git_add_command)
 
 message = Readline.readline('enter commit message (blank to exit)> ')
-exit $?.exitstatus unless system('git', 'commit', '--message', message)
+git_commit_command_args = ['git', 'commit', '--message', message]
+puts "Commiting files with: #{git_commit_command_args.join(' ')}"
+exit $?.exitstatus unless system(*git_commit_command_args)
 
+git_push_command = 'git push heroku master'
+puts "Pushing to heroku with: #{git_push_command}"
 system 'git push heroku master'
 exit $?.exitstatus
 
