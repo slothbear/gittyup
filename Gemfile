@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in adcopu.gemspec
+# Specify your gem's dependencies in gittyup.gemspec
 gemspec

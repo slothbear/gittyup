@@ -1,4 +1,4 @@
-# adcopu
+## introduction
 
 New users to **git** and **Heroku** sometimes have trouble
 with the syntax and arguments of the git commands required
@@ -10,15 +10,15 @@ commit message. The wrapper contains no error handling,
 so the user will receive standard errors from git.
 
 ## installation
-If you have a Gemfile, add **adcopu**. Otherwise, install it like this:
+If you have a Gemfile, add **gittyup**. Otherwise, install it like this:
 
-    $ gem install adcopu
+    $ gem install gittyup
 
 ## usage
 
 typical usage:
 
-    $ adcopu
+    $ gittyup
     enter commit message (blank to exit)> New site title
     [master 318bd11] New site title
      1 files changed, 2 insertions(+), 0 deletions(-)
@@ -34,7 +34,7 @@ typical usage:
     $
 
 ## detailed operation
-All code is in [bin/adcopu](https://github.com/slothbear/adcopu/blob/master/bin/adcopu).
+All code is in [bin/gittyup](https://github.com/slothbear/gittyup/blob/master/bin/gittyup).
 An error from any system command causes the script to exit.
 
 Since the script is designed for beginning users, it assumes
@@ -58,11 +58,11 @@ operation is passed back via `exit $?.exitstatus`. The status
 
 ## tests
 A nicely formatted test suite is available at
-[Relish](http://relishapp.com/slothbear/adcopu).
+[Relish](http://relishapp.com/slothbear/gittyup).
 
 To run the tests:
 ```
-    $ cd adcopu
+    $ cd gittyup
     $ bundle
     $ rake
 ```

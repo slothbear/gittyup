@@ -5,7 +5,7 @@ Before do
   # subdir of the gem directory, already part of a git repository.
   # We are responsible for cleaning the directory on startup.
   # Being careful, we only clean items we know we created.
-  temp_dir = '/tmp/aruba/adcopu/'
+  temp_dir = '/tmp/aruba/gittyup/'
   FileUtils.rm_rf(temp_dir + 'repository/.git', :secure => true)
   FileUtils.rm_f(temp_dir + 'repository/railsbridge-boston.rb')
   FileUtils.rmdir(temp_dir + 'repository')

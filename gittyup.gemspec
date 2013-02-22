@@ -1,11 +1,11 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'adcopu/version'
+require 'gittyup/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "adcopu"
-  gem.version       = Adcopu::VERSION
+  gem.name          = "gittyup"
+  gem.version       = Gittyup::VERSION
   gem.authors       = ["Paul Morganthall"]
   gem.email         = ["pcm@morganthall.com"]
   gem.description   = %q{New users to git and Heroku sometimes have trouble
@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
                          so the user will receive errors from git.
                          }
   gem.summary       = %q{wrapper for git add/commit/push to Heroku}
-  gem.homepage      = "http://github.com/slothbear/adcopu"
+  gem.homepage      = "http://github.com/slothbear/gittyup"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

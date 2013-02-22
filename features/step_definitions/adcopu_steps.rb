@@ -30,7 +30,7 @@ Given /^there is a git remote named heroku$/ do
   @aruba_timeout_seconds = 15
 
   steps %Q{
-    Given I successfully run `git remote add heroku git@heroku.com:adcopu_test_app.git`
+    Given I successfully run `git remote add heroku git@heroku.com:gittyup_test_app.git`
   }
 end
 
