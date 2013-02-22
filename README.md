@@ -34,7 +34,7 @@ typical usage:
     $
 
 ## detailed operation
-All code is in [bin/gittyup](https://github.com/slothbear/gittyup/blob/master/bin/gittyup).
+All code is in [bin/gittyup](bin/gittyup).
 An error from any system command causes the script to exit.
 
 Since the script is designed for beginning users, it assumes
