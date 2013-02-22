@@ -23,7 +23,7 @@ puts "\nCommiting files with: #{git_commit_command_args.join(' ')}"
 exit $?.exitstatus unless system(*git_commit_command_args)
 
 git_push_command = 'git push heroku master'
-puts "\nPushing to heroku with: #{git_push_command}"
+puts "\nPushing to Heroku with: #{git_push_command}"
 system 'git push heroku master'
 exit $?.exitstatus
 
