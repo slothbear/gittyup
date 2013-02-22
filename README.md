@@ -54,7 +54,8 @@ are no changed files to commit.
 1. `git push heroku master` Deploy the updated repository to Heroku.
 
 For every system command performed, the exit status of the
-operation is passed back via `exit $?.exitstatus`. The status
+operation is passed back via `exit $?.exitstatus`. That status is
+used by the tests.
 
 ## tests
 A nicely formatted test suite is available at
