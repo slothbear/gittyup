@@ -3,9 +3,7 @@ require 'readline'
 
 # Perform git add, commit, and push to Heroku.
 
-status_command = 'git status --porcelain'
-puts "\nChecking git status with: #{status_command}"
-status = %x[#{status_command}]
+status = %x[git status --porcelain]
 exit $?.exitstatus unless $?.success?
 
 if status.empty?
