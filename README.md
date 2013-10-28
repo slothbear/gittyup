@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/gittyup.png)](http://badge.fury.io/rb/gittyup)
+
 ## introduction
 
 New users to **git** and **Heroku** sometimes have trouble
